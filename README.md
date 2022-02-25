@@ -13,6 +13,12 @@ address from the IP network: 192.168.100.0/24.
  3. Configure client1 hostname as client1 and FQDN as client1.yourname. local
  ![image](https://user-images.githubusercontent.com/97167360/155762610-092b4888-64e4-4190-8910-44779a4fe222.png)
 
+4. Install and configure DHCP protocol on the server1, make sure the Client1
+private interface will get an IPv4 address, Default Gateway and Domain Name
+and DNS automatically from DHCP on server1. (The Default Gateway, DNS
+name server is server1 IP address). 
+
+![image](https://user-images.githubusercontent.com/97167360/155815422-a7820475-9912-426b-946e-6ac5c2f6fc14.png)
 
 
 
