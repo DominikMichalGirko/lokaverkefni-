@@ -20,5 +20,15 @@ name server is server1 IP address).
 
 ![image](https://user-images.githubusercontent.com/97167360/155815422-a7820475-9912-426b-946e-6ac5c2f6fc14.png)
 
+5. Install and Configure DNS on server for the internal network so hostnames are
+resolved to IP addresses.
+
+![image](https://user-images.githubusercontent.com/97167360/155818090-993133c9-6109-41d7-8825-bcafd4a8a097.png)
+
+
+sudo systemctl restart bind9.service
+
+
+
 
 
