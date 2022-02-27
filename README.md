@@ -28,6 +28,13 @@ resolved to IP addresses.
 
 sudo systemctl restart bind9.service
 
+6. Create (comma separated values) CSV file with the following user attributes:
+7. FirstName, LastName, UserName, Department and Password. 
+
+[klient (1).csv](https://github.com/DominikMichalGirko/lokaverkefni-/files/8149315/klient.1.csv)
+
+
+
 
 
 
