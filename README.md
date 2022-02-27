@@ -41,6 +41,82 @@ respectively.
 9. Each user should have his own directory under /home should use bash shell
 and an encrypted password. 
 
+![image](https://user-images.githubusercontent.com/97167360/155901197-326c5440-b4cb-4a2c-a03c-c7a2331556cd.png)
+
+10.All users should have access to their home directory only, except the for the IT
+group they should have full access to all directories. 
+
+![image](https://user-images.githubusercontent.com/97167360/155901224-e9ae1797-93fc-4ee3-a10b-77ebc60e1b5c.png)
+
+11.Install configure Samba then create network shared folder for each department.
+All users should have full access (Read, Write and Execute Permissions) to their
+shared Folder. However, IT and Management should full access to all shared
+Folders. 
+
+![image](https://user-images.githubusercontent.com/97167360/155901326-90d7c003-7409-4e8b-84bd-45c799ba6dc9.png)
+
+![image](https://user-images.githubusercontent.com/97167360/155901333-c0939089-0fc5-4094-a2e5-e059e2923a78.png)
+
+Samba install:
+
+sudo apt install samba 
+
+Configuractions :
+
+sudo systemctl stop nmbd.service
+sudo systemctl disable nmbd.service
+
+sudo systemctl stop smbd.service
+
+Before edit  /etc/samba/smb.conf ,Than write 
+ip link
+
+sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.orig
+
+sudo nano /etc/samba/smb.conf
+
+Create user 
+
+sudo mkdir /samba/
+sudo chown :sambashare /samba/
+
+sudo mkdir /samba/my 
+
+sudo adduser --home /samba/dominik  --no-create-home --shell /usr/sbin/nologin --ingroup sambashare dominik
+
+sudo chmod 2770 /samba/dominik /
+
+sudo smbpasswd -a user name
+sudo smbpasswd -e user name
+
+Then for every samba user same proces.
+
+ /samba/everyone/:
+
+sudo mkdir /samba/someone 
+sudo adduser --home /samba/ --no-create-home --shell /usr/sbin/nologin --ingroup sambashare admin
+sudo chown admin:sambashare /samba/
+sudo chmod 2770 /samba/
+sudo smbpasswd -a admin
+sudo smbpasswd -e admin
+
+sudo groupadd admins
+sudo usermod -G admins admin
+
+sudo nano /etc/samba/smb.conf
+
+Test:
+sudo testparm 
+
+sudo systemctl start smbd.service
+
+Log in:
+
+sudo apt-get update
+sudo apt-get install smbclient
+
+
+
 
 
 
