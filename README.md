@@ -33,6 +33,15 @@ sudo systemctl restart bind9.service
 
 [klient (1).csv](https://github.com/DominikMichalGirko/lokaverkefni-/files/8149315/klient.1.csv)
 
+8. Create a bash script that will import all user accounts into their groups
+respectively. 
+
+??
+
+9. Each user should have his own directory under /home should use bash shell
+and an encrypted password. 
+
+
 
 
 
