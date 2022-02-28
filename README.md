@@ -118,6 +118,24 @@ sudo apt-get install smbclient
 
 
 
+12. Install and configure SSH protocol, so IT and Management users have remote
+access to the server via SSH and test your configuration. 
+
+
+sudo apt install openssh-server
+
+![image](https://user-images.githubusercontent.com/97167360/156017215-a1d84bf3-748d-4fd7-a1f5-0a67e5594b2c.png)
+
+
+13.Install apache2 web server with SSL certificate and configure a demo site, the
+site should be accessible via the URL https://www.yourname.local
+
+f
+
+
+
+
+
 
 
 
