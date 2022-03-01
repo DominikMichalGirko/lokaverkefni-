@@ -130,8 +130,24 @@ sudo apt install openssh-server
 13.Install apache2 web server with SSL certificate and configure a demo site, the
 site should be accessible via the URL https://www.yourname.local
 
-f
+To install apache and ssl certificate
 
+sudo apt install apache2
+sudo a2enmod ssl
+
+Copy the entire contents of the certificate from the line ----- BEGIN CERTIFICATE ----- to ----- END OF CERTIFICATE ----- and save to mydomain.crt.
+Download the certificate from the mydomain.crt directory on the list of the most certified certificates, e.g .:
+/ etc / ssl / certificates /
+Check the Apache configuration file apache2.conf in a text editor.
+Locate VirtualHost as a virtual server for the two virtual servers. The SSL certificate certificate does not require direct signing:
+
+SSLEngine enabled - SSL in Apache
+SSLCertificateFile - A certificate server that serves as an intermediate (SSL) certificate to support SSL certification
+SSLCertificateKeyFile - The best way to create a private key
+
+sudo restart apache2
+
+To check if it works, go to the displayed https: /127.0.0.1 or https://127.0.1.1
 
 
 
